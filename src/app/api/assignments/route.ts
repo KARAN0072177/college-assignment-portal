@@ -98,3 +98,34 @@ export async function POST(req: Request) {
     );
   }
 }
+
+export async function GET() {
+  try {
+    await connectDB();
+
+    // Session check
+    const sessionCookie = (await cookies()).get("session")?.value;
+    if (!sessionCookie) {
+      return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
+    }
+
+    const session = JSON.parse(sessionCookie);
+
+    if (session.role !== "student") {
+      return NextResponse.json({ error: "Forbidden" }, { status: 403 });
+    }
+
+    // Fetch student's assignments
+    const assignments = await Assignment.find({
+      studentId: session.userId,
+    }).sort({ createdAt: -1 });
+
+    return NextResponse.json(assignments);
+  } catch (error) {
+    console.error("Fetch assignments error:", error);
+    return NextResponse.json(
+      { error: "Internal server error" },
+      { status: 500 }
+    );
+  }
+}
