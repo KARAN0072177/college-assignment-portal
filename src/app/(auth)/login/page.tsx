@@ -33,15 +33,17 @@ export default function LoginPage() {
 
       // Redirect based on role
       if (data.role === "student") {
-        router.push("/student");
+        router.replace("/student");
       } else {
-        router.push("/teacher");
+        router.replace("/teacher");
       }
     } catch (err) {
       setError("Network error. Please try again.");
     } finally {
       setIsLoading(false);
     }
+
+    router.refresh();
   };
 
   const handleDemoLogin = (role: "student" | "teacher") => {
