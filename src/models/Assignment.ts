@@ -3,8 +3,16 @@ import mongoose, { Schema, models, model } from "mongoose";
 export interface IAssignment {
   title: string;
   subject: string;
+  description?: string;
+
+  fileName: string;
+  fileUrl: string;
+  s3Key: string;
+  fileType: string;
+  fileSize: number;
+
   studentId: mongoose.Types.ObjectId;
-  createdAt: Date;
+  submittedAt: Date;
 }
 
 const AssignmentSchema = new Schema<IAssignment>({
@@ -20,13 +28,44 @@ const AssignmentSchema = new Schema<IAssignment>({
     trim: true,
   },
 
+  description: {
+    type: String,
+    trim: true,
+  },
+
+  fileName: {
+    type: String,
+    required: true,
+  },
+
+  fileUrl: {
+    type: String,
+    required: true,
+  },
+
+  s3Key: {
+    type: String,
+    required: true,
+    unique: true,
+  },
+
+  fileType: {
+    type: String,
+    required: true,
+  },
+
+  fileSize: {
+    type: Number,
+    required: true,
+  },
+
   studentId: {
     type: Schema.Types.ObjectId,
     ref: "User",
     required: true,
   },
 
-  createdAt: {
+  submittedAt: {
     type: Date,
     default: Date.now,
   },
