@@ -27,6 +27,7 @@ This project was created to:
 - Illustrate **role-based access control** (student vs teacher)
 - Practice building **clear data flow** between frontend, backend, and database
 - Serve as a **college-level academic project** with real-world relevance
+- **CI/CD pipelines** (automated testing and deployment)
 
 It prioritizes **correctness and structure** over unnecessary complexity.
 
@@ -62,7 +63,7 @@ This project is intentionally designed to be **extensible**.
 
 In future iterations, it will also be used to demonstrate:
 
-- **CI/CD pipelines** (automated testing and deployment)
+
 - **Cloud services** such as AWS for hosting, storage, or databases
 - More advanced deployment workflows
 - Scalable architecture concepts
