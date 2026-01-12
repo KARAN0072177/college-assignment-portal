@@ -10,6 +10,17 @@ jobs:
   build:
     runs-on: ubuntu-latest
 
+    # 👇 Dummy environment variables for CI build
+    env:
+      MONGODB_URI: mongodb://localhost:27017/test
+      JWT_SECRET: dummy_jwt_secret
+      AWS_ACCESS_KEY_ID: dummy
+      AWS_SECRET_ACCESS_KEY: dummy
+      AWS_REGION: us-east-1
+      AWS_S3_BUCKET_NAME: dummy-bucket
+      PORT: 3000
+      NEXT_PUBLIC_APP_URL: http://localhost:3000
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
