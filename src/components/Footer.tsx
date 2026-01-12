@@ -1,15 +1,15 @@
 'use client';
 
 import Link from 'next/link';
-import { 
-  GraduationCap, 
-  Mail, 
-  Phone, 
-  MapPin, 
-  Facebook, 
-  Twitter, 
-  Linkedin, 
-  Instagram, 
+import {
+  GraduationCap,
+  Mail,
+  Phone,
+  MapPin,
+  Facebook,
+  Twitter,
+  Linkedin,
+  Instagram,
   Youtube,
   ArrowRight,
   Heart,
@@ -27,7 +27,7 @@ const Footer = () => {
       {/* Main Footer Content */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
-          
+
           {/* Brand Column */}
           <div className="lg:col-span-1">
             <Link href="/" className="inline-flex items-center space-x-3 group">
@@ -40,20 +40,21 @@ const Footer = () => {
               </div>
             </Link>
             <p className="mt-6 text-gray-400 text-sm leading-relaxed">
-              A modern platform designed to streamline academic workflows, enhance collaboration, 
+              A modern platform designed to streamline academic workflows, enhance collaboration,
               and empower students and educators worldwide.
             </p>
-            
+
             {/* Newsletter Subscription */}
             <div className="mt-8">
               <h3 className="text-sm font-semibold text-white mb-3">Stay Updated</h3>
               <div className="flex">
                 <input
+                  suppressHydrationWarning
                   type="email"
                   placeholder="Your email"
                   className="flex-1 px-4 py-2.5 bg-gray-800 border border-gray-700 rounded-l-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm"
                 />
-                <button className="px-4 py-2.5 bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 rounded-r-lg transition-all group">
+                <button suppressHydrationWarning className="px-4 py-2.5 bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 rounded-r-lg transition-all group">
                   <ArrowRight className="h-5 w-5 group-hover:translate-x-1 transition-transform" />
                 </button>
               </div>
@@ -127,8 +128,8 @@ const Footer = () => {
                 <Mail className="h-5 w-5 text-gray-400 mr-3 mt-0.5" />
                 <div>
                   <p className="text-sm text-gray-400">Email</p>
-                  <a 
-                    href="mailto:support@eduportal.ac" 
+                  <a
+                    href="mailto:support@eduportal.ac"
                     className="text-white hover:text-blue-400 transition-colors"
                   >
                     support@eduportal.ac
@@ -139,8 +140,8 @@ const Footer = () => {
                 <Phone className="h-5 w-5 text-gray-400 mr-3 mt-0.5" />
                 <div>
                   <p className="text-sm text-gray-400">Phone</p>
-                  <a 
-                    href="tel:+11234567890" 
+                  <a
+                    href="tel:+11234567890"
                     className="text-white hover:text-blue-400 transition-colors"
                   >
                     +1 (123) 456-7890
@@ -194,7 +195,7 @@ const Footer = () => {
                 <span className="text-sm text-gray-400">GDPR Compliant</span>
               </div>
             </div>
-            
+
             <div className="flex items-center space-x-6 text-sm text-gray-400">
               <Link href="#" className="hover:text-white transition-colors">Privacy Policy</Link>
               <Link href="#" className="hover:text-white transition-colors">Terms of Service</Link>
@@ -217,7 +218,7 @@ const Footer = () => {
                 Designed for academic excellence <Heart className="inline h-3 w-3 text-red-400 mx-1" /> worldwide.
               </p>
             </div>
-            
+
             <div className="flex items-center justify-center space-x-4 text-xs text-gray-500">
               <span>v2.4.1</span>
               <span className="hidden sm:inline">•</span>
@@ -234,6 +235,7 @@ const Footer = () => {
 
       {/* Back to Top Button */}
       <button
+        suppressHydrationWarning
         onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
         className="fixed bottom-8 right-8 w-12 h-12 rounded-full bg-gradient-to-r from-blue-600 to-indigo-600 shadow-lg hover:shadow-xl hover:from-blue-700 hover:to-indigo-700 transition-all duration-300 flex items-center justify-center group"
         aria-label="Back to top"

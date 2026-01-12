@@ -39,19 +39,21 @@ export async function POST(req: Request) {
 
     // 4️⃣ Create session cookie
     (await
-          // 4️⃣ Create session cookie
-          cookies()).set(
-      "session",
-      JSON.stringify({
-        userId: user._id.toString(),
-        role: user.role,
-      }),
-      {
-        httpOnly: true,
-        sameSite: "lax",
-        path: "/",
-      }
-    );
+      // 4️⃣ Create session cookie
+      cookies()).set(
+        "session",
+        JSON.stringify({
+          userId: user._id.toString(),
+          role: user.role,
+        }),
+        {
+          httpOnly: true,
+          sameSite: "lax",
+          path: "/",
+          maxAge: 60 * 60 * 24 * 7, // 7 days
+          secure: process.env.NODE_ENV === "production",
+        }
+      );
 
     return NextResponse.json(
       {
