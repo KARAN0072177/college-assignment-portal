@@ -77,7 +77,7 @@ These additions will build on the existing foundation without changing the core 
 This project is suitable for:
 - College mini-projects
 - Practical demonstrations
-- Learning full-stack concepts
+- Learning full-stack concepts along with DEVOPS concepts
 - Explaining authentication and authorization in real systems
 
 It balances **academic clarity** with **industry-inspired practices**.
