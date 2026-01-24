@@ -1,6 +1,6 @@
 # College Assignment Portal
 
-A **full-stack academic demonstration project** that showcases how a **role-based assignment submission system** can be built using modern web development practices.
+A **full-stack academic demonstration project** that showcases how a **role-based assignment submission system (RBAC)** can be built using modern web development practices.
 
 This project focuses on **clarity, separation of responsibilities, and real-world workflows** rather than feature overload.
 
